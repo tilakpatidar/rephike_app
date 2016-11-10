@@ -1,0 +1,61 @@
+ <% owner_user = User.find(list_item.user_id) %>
+ <div class="mysizepane">
+<div  class="goal_card container-fluid">
+        <div class="col-md-12">
+            
+            <div class="panel panel-inverse colo" data-sortable-id="ui-widget-2" id="goal-panel">
+                <div class="panel-heading colo">
+                    <div class="panel-head-img"><%= user_avatar owner_user %><span class="userpanelu"><%= owner_user.name %></span><div class="userpanel"><sub><%= time_ago_in_words list_item.updated_at %> </sub></div>
+                     <div class="btn-group pull-right panbtn">
+                        <%= link_to edit_list_path(list_item), :style => "margin-right:0.50rem;", :class => "btn btn-success btn-xs ", :data => { :no_turbolink => true } do %>
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;Add Goal
+            <% end %>
+                        <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa fa-cog"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><%= link_to 'Show', list_item %></li>
+                            <% if list_item.user_id == current_user.id %> 
+                                <li><a href="javascript: window.location = '<%= edit_list_path(list_item) %>';">Edit</a></li>
+                                <li><%= link_to 'Destroy', list_item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                                <li>
+                                <% if not list_item.completed? and list_item.user_id == current_user.id %>
+                                        <%= link_to 'Mark As Done', list_complete_path(:id => list_item.id), :method => :post %>
+                                <% end %>
+
+                   </li>
+                            <% end %>
+                        </ul>
+
+                    </div>
+                </div>
+                
+                </div>
+
+</div>
+<h4 class="panel-body cardtit">
+    <%= link_to list_item.title, list_path(list_item) %><br>
+    <%= create_tags list_item %>
+</h4>
+<div class="bucket_desc">
+    <%= raw list_item.desc %>
+</div>
+<div class="cardbodytext">
+                   
+<center>
+                    <div>
+                        <%= link_to 'View Bucket', list_path(list_item), :class => 'btn btn-primary' %><br><br>
+                 <%= social_share_button_tag(list_item.title, :url => list_url(list_item) ) %>
+                    <% if not list_item.user_id == current_user.id  %>
+                        <%= link_to list_like_path(:id => list_item.id), :method => :post, :class => 'btn btn-success ryt'  do %>
+                            <span class="fa fa-thumbs-o-up "></span>
+                        <% end %>
+                    <% end %>
+</div>
+
+</center>
+                </div>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,15 @@
+<% if not @n.nil? %>
+<% @n.each do |notify| %>
+
+	
+                            <li class="media">
+                                <a href="javascript:;">
+                                    <div class="media-body">
+                                        <h6 class="media-heading"><%= notify.subject %></h6>
+                                        <div class="text-muted f-s-11"><%= time_ago_in_words notify.created_at %></div>
+                                    </div>
+                                </a>
+                            </li>
+
+<% end %>
+<% end %>

@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top:20px;">
+    <div class="col-md-6 col-md-offset-3 well" style="background-color:#FAFAFA; border-radius:10px;">
+<%= semantic_form_for(resource, as: resource_name, class: 'form-signup', url: registration_path(resource_name))  do |f| %>
+      <fieldset>
+        <h3 class="sign-up-title" style="color:dimgray; text-align: center">Welcome!! Please Enter Details</h3>
+        <hr class="colorgraph">
+          
+          <%= devise_error_messages! %>
+          
+          <%= f.inputs do %>
+              <%= f.input :name, :as=>:string, :required => true, :placeholder=>"name", class:'form-control' %>
+              <%= f.input :contact, :as => :string, :required => true, :placeholder=>"Select dial code on left and just enter mobile number", class:'form-control' %>
+
+              <%= f.input :email, :as => :email, :required => true, :placeholder=>"email address", class:'form-control' %>
+
+              <%= f.input :password, :as => :password, :required => true , class:'form-control'%>
+              <%= f.input :password_confirmation, :as =>:password, :required => true, class:'form-control' %>
+              
+              <%= f.input :avatar, :as => :file %>
+          <% end %>
+           <% if devise_mapping.rememberable? -%>
+    <div class="field" style="margin-top: 10px;">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+      <%= link_to 'Forget Password??', new_user_password_path , class:'pull-right'%>
+    </div>
+  <% end -%>
+          <%= f.actions do %>
+              <%= f.action :submit, :label => "Sign Up", :button_html => { class: 'btn btn-lg btn-success btn-block'}  %>
+          <% end %>
+
+<% end %>
+<div class="row" style="padding:2rem;text-align:center">
+<p> Already have a account ?? &nbsp;&nbsp;
+<%= link_to 'Sign In', new_user_session_path%>
+</p>
+<div>
+      </fieldset>
+      </div>
+    </div>
+  </div>
+<%= render "devise/shared/links" %>

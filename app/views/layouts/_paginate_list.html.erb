@@ -1,0 +1,13 @@
+<%if not lists.empty? %>
+      <div class="container-fluid">
+    
+      <div class='pagination_info pull-left'><%= page_entries_info(lists) %></div>
+      <div class='paginate_main pull-right'><%= will_paginate(lists) %></div>
+    </div>
+      <% lists.each do |list| %>
+        <%= render 'layouts/list', :list_item => list %>
+      <% end %>
+
+    <% else %>
+      <%= no_lists %>
+    <% end %>

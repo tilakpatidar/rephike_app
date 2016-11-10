@@ -1,0 +1,37 @@
+.heading-goal{
+	text-align:center;
+	margin-top:1rem;
+}
+.show-goal{
+	font-size: 1.4em;
+}
+.tag-set{
+	font-style: italic;
+}
+.bucket-description{
+	text-align: center;
+	padding:1rem;
+}
+.goal-table{
+	font-size: 0.75em;
+}
+th,td{
+	text-align: center;
+}
+.completed-goals>td > p >img {
+	height:100px !important;
+	width:120px !important;
+}
+
+.show_published_time{
+    display: block;
+    font-size: 12px;
+    position: relative;
+    top: -20px;
+}
+
+
+.bucket-description > img{
+		height:100px !important;
+	width:120px !important;
+}

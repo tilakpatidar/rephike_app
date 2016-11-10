@@ -1,0 +1,111 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#header{
+    z-index: 10010;
+}
+.panel-edit{
+	padding:5%;
+}
+.turbolinks-progress-bar{
+	color: #00acac;
+	background-color: #00acac;
+	z-index: 11000;
+}
+.info_row{
+    text-align: center;
+    padding: 50px;
+    min-height: 300px;
+    vertical-align: middle;
+    
+}
+.info_row_2{
+	margin: 50px;
+	text-align: center;
+}
+
+#goal-panel{
+	z-index:-8;
+	border:0px solid;
+	border-radius:0.3px;
+}
+.panel-head-img{
+	
+	height:95%;
+	width:95%;
+	margin-right:5%;
+}
+.colo
+{
+	background-color:#d2cdcd !important;
+}
+.bucket_desc{
+	text-align: center;
+    font-size: 1em;
+    padding: 15px;
+    background-color:white;
+}
+.userpanel{
+    position: relative;
+    left: 63px;
+    top: -25px;
+    font-size: 15px;
+    color: grey;
+    font-weight: 600;
+}
+.userpanelu{
+	margin-left: 15px;
+	font-size: 1.5em;
+	color:black;
+	margin-top:-8% !important;
+}
+
+.panbtn{
+	position: relative;
+    top: -34px;
+    left: 20px;
+}
+.mysizepane
+{
+	width:33% !important;
+	float:left;
+
+}
+.cardtit{
+	text-align:center !important;
+	margin-top:-6% !important;
+	margin-bottom:0px !important;
+	padding-bottom:2px;
+	border:1px solid #efefef;
+	border-bottom:0px;
+	z-index:10;
+	background-color:white;
+
+}
+.cardbodytext{
+	padding-left:2%;
+	font-size:120% !important;
+	color:black;
+	border:1px solid #efefef;
+	border-top:0px;
+	z-index:10;
+	background-color:white;
+}
+.ryt{
+postion:relative !important;
+top:-35px !important;
+	float:right;
+margin-top: -10% !important;
+}
+
+.greet_user{
+	text-align: center;
+    margin: 20px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.trending_bucket{
+	margin: 20px;
+	min-height: 500px;
+}

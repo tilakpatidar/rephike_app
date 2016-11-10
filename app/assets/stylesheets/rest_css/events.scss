@@ -1,0 +1,33 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.current-month{
+	font-size: 1.5em;
+	font-weight : 700;
+	color: #1f1f1f;
+}
+
+thead{
+	font-size: 1.5em;
+	font-weight : bold;	
+}
+
+.prev-month , .next-month {
+	font-size: 1.5em;
+	font-weight : 700;
+}
+
+.events_table{
+	table-layout:fixed;
+}
+.calendar-title
+{
+	font-size: 1.8em;
+	font-weight : bold;
+	color:#20650b;
+}
+.calendar-heading
+{
+	text-align:center;
+}

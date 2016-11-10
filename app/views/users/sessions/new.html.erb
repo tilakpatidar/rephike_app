@@ -1,0 +1,39 @@
+<h2 style="text-align:center;">Sign in</h2>
+  <%   def devise_mapping
+    @devise_mapping ||= Devise.mappings[:student]
+  end %>
+<div class="container-fluid">
+    <div class="col-md-4 col-md-offset-4 well devise_container">
+        <%= form_for(resource, as: resource_name, class: 'form-signin', url: session_path(resource_name)) do |f| %>
+        <fieldset>
+        <h3 class="sign-up-title" style="color:dimgray; text-align: center">Welcome back! Please sign in</h3>
+        <hr class="colorgraph">
+        <div class="field">
+    <%= f.label :email , class: 'form-label'%>
+    <%= f.email_field :email, class: 'form-control', autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password , class: 'form-label' %>
+    <%= f.password_field :password, class: 'form-control',autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field" style="margin-top: 10px;">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+      <%= link_to 'Forget Password??', new_user_password_path , class:'pull-right'%>
+    </div>
+  <% end -%>
+  <div class="actions" style="text-align:center">
+    <%= f.submit "Log in", class: 'btn btn-lg btn-success btn-block', id: 'student_login_btn' %>
+  </div>
+<% end %>
+<div class="row" style="padding:2rem;text-align:center">
+<p> Don't Have a account ?? &nbsp;&nbsp;
+<%= link_to 'Sign Up', new_user_registration_path%>
+</p>
+<div>
+</fieldset>
+      </div>
+</div>

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    
+    $(document).turboready(function(){
+
+        <% unless flash.empty?  %>
+        <% flash.each do |f| %>
+            <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info').gsub('alert', 'custom_error') %>
+            <% if type!="toastr_error" and not f[1].nil? and not f[1].empty? %>
+              toastr['<%= type %>']('<%= f[1] %>');
+            <% end %>
+        <% end %>
+      <% end %>
+
+
+    <% flash[:error] = flash[:errors] = flash[:notice] = nil %>
+
+    });
+
+</script>

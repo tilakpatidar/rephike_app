@@ -1,0 +1,32 @@
+.tips{
+	text-align:center;
+}
+.tips-image{
+	display: block;
+    width: 175px;
+    height: 105px;
+    margin: 0 auto;
+}
+.item {
+    height: 400px;
+    width:100%;
+    overflow:hidden;
+}
+.item > img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100%;
+}
+.useraccess{
+	display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    margin-top: 2rem;
+}
+.main_row{
+    min-height:400px;
+    margin-top:45px !important;
+    padding:1rem;
+}

@@ -1,0 +1,26 @@
+<div class="container_main" style="padding-top:0px;">
+<center>
+	<div class="profile-img">
+		<%= user_avatar(current_user) %>
+	</div>
+</center>
+
+<div class="container-fluid profile-cont">
+	<div class="profile-actionbtn pull-right">
+		<button onclick = "javascript: Turbolinks.visit('<%=edit_user_registration_path%>');" type="button" class="btn btn-primary">Edit Profile</button>
+		<%= link_to 'Delete Profile', destroy_user_path(current_user), class:'btn btn-danger', :method => :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+
+
+	<center><div class="profile-details">
+		<h4><b> Name </b><div class="mypanel"> <%= current_user.name %></div></h4>
+		<h4><b> Gender </b><div class="mypanel"><%= current_user.gender %></div></h4>
+		<h4><b> Dob </b><div class="mypanel"><%= current_user.dob %></div></h4>
+		<h4><b> E-mail </b><div class="mypanel"> <%= current_user.email %></div></h4>
+		<h4><b> Contact </b><div class="mypanel"><%= current_user.contact %></div></h4>
+		<h4 style="display:none"><b> Location </b><p class="mypanel"></p></h4>
+		<h4 style="display:none"><b> Interests </b><p class="mycard"></p></h4>
+		<h4 style="display:none"><b> Description </b><p class="mycard"></p></h4>
+	</div></center>
+</div>
+</div>

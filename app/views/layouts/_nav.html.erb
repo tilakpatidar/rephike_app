@@ -1,0 +1,83 @@
+<div class="container-fluid	">
+			<!-- begin #header -->
+		<nav id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<!-- begin mobile sidebar expand / collapse button -->
+				<div class="navbar-header">
+					<a href="<%=root_path%>" class="navbar-brand"><span class="navbar-logo"></span> Rephike App</a>
+					<button id='menu-toggle' type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top_nav" aria-expanded="true" aria-controls="navbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div id="top_nav" class="navbar-collapse collapse">
+				<!-- end mobile sidebar expand / collapse button -->
+				<ul class="nav navbar-nav navbar-left">
+					<li>
+							<a href="#" class="left_link">HOW</a>
+					</li>
+					<li>
+							<a href="#" class="left_link">WHY</a>
+					</li>
+					<li>
+							<a href="#" class="left_link">HOW IT WORKS</a>
+					</li>
+					<li>
+							<a href="#" class="left_link">TEAM</a>
+					</li>
+					<li>
+							<a href="#" class="left_link">PLATFORM</a>
+					</li>
+				</ul>
+				<!-- begin header navigation right -->
+				<ul class="nav navbar-nav navbar-right">
+					<% if not user_signed_in?%>
+					<li>
+							<a href= "javascript: Turbolinks.visit('<%=new_user_session_path%>');"> Sign In</a>
+					</li>
+					<li>
+							<a href = "javascript: Turbolinks.visit('<%=new_user_registration_path%>');">Sign Up</a>
+					</li>
+					<%end%>
+					<% if user_signed_in?%>
+					<li class="dropdown">
+						<a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14">
+							<i class="fa fa-bell-o"></i>
+							<span class="label"><%= @n.count if not @n.nil? %><%= '0' if @n.nil? %></span>
+						</a>
+						<ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <%= render 'layouts/notifications' %>
+						</ul>
+					</li>
+					<li class="dropdown navbar-user" style="<%= "display:none;" if not user_signed_in? %>">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+							<% if user_signed_in?%>
+							<%= user_avatar(current_user) %>
+							<%end%>
+							<span class="hidden-xs">
+								<% if user_signed_in?%>
+								<%=current_user.name%>
+								<%end%>
+							</span> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li class="arrow"></li>
+							<li><%= link_to 'Dashboard', root_path %></li>
+							<li><%= link_to 'Show Profile', profile_path %></li>
+							<li class="divider"></li>
+							<li><%= link_to 'Log Out', destroy_user_session_path, :method=> :delete %></li>
+						</ul>
+					</li>
+					<%end%>
+				</ul>
+				</div>
+				<!-- end header navigation right -->
+			</div>
+			<!-- end container-fluid -->
+		</nav>
+		<!-- end #header -->
+</div>
+
+

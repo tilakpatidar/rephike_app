@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-3 well devise_container">
+<%= semantic_form_for(resource, as: resource_name, class: 'form-signup', url: registration_path(resource_name))  do |f| %>
+      <fieldset>
+        <h3 class="sign-up-title" style="color:dimgray; text-align: center">Welcome!! Please Update Details</h3>
+        <hr class="colorgraph">
+          
+          <%= devise_error_messages! %>
+          
+          <%= f.inputs do %>
+              <%= f.input :name, :as=>:string, :required => true, :placeholder=>"name", :input_html => {class:'form-control'} %>
+              <%= f.input :gender, :as=>:select, :required => true, :placeholder=>"gender" , :input_html => {class:'form-control'} %>
+              <%= f.input :dob, :as => :ui_date_picker %>
+              <%= f.input :contact, :as => :string, :required => true, :placeholder=>"Select dial code on left and just enter mobile number", :input_html => {class:'form-control'} %>
+
+              <%= f.input :email, :as => :email, :required => true, :placeholder=>"email address", :input_html => {class:'form-control'} %>
+
+              <%= f.input :current_password, :as => :password, :required => true , :input_html => {class:'form-control'}%>
+
+              <%= f.input :password, :as => :password, :required => true , :input_html => {class:'form-control'}%>
+
+              <%= f.input :password_confirmation, :as =>:password, :required => true, :input_html => {class:'form-control'} %>
+              
+              <%= f.input :avatar, :as => :file %>
+          <% end %>
+           
+          <%= f.actions do %>
+              <%= f.action :submit, :label => "Update Profile", :button_html => { class: 'btn btn-lg btn-success btn-block'}  %>
+          <% end %>
+
+<% end %>
+
+      </fieldset>
+      </div>
+  </div>
+<%= render "devise/shared/links" %>
