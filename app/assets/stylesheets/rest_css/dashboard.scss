@@ -72,6 +72,10 @@
 	float:left;
 
 }
+#toast-container  {
+	position: fixed;
+	z-index: 20000 !important;
+}
 .cardtit{
 	text-align:center !important;
 	margin-top:-6% !important;
